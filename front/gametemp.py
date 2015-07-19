@@ -56,11 +56,11 @@ def draw(canvas):
         if len(shuriken_data) == 2:
             shuriken_data[0] = float(convert_to_pixels(float(shuriken_data[0])))
             if int(shuriken_data[1]) == 1:
-        	loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,0,topArea/3)
-            elif int(shuriken_data[1]) == 2:
-        	loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,topArea/3,2*(topArea/3))
-            elif int(shuriken_data[1]) == 3:
-        	loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,2*(topArea/3),topArea)
+                loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,0,topArea/3)
+        	elif int(shuriken_data[1]) == 2:
+                loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,topArea/3,2*(topArea/3))
+        	elif int(shuriken_data[1]) == 3:
+                loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,2*(topArea/3),topArea)
         else:
             print "Error, single value only"
 
@@ -77,3 +77,5 @@ arduino.flush()
 arduino.flushInput()
 arduino.flushOutput()
 arduino.close()
+
+			
