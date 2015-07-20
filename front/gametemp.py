@@ -17,7 +17,7 @@ GAP = 30
 BALL_COLOUR = 'Black'
 ball_pos = []
 i=0
-num_of_targets = 8
+num_of_targets = 5
 pos_of_disk = None
 topArea = CANVAS_HEIGHT-(CANVAS_HEIGHT/3)
 RESOLUTIONx = 103.484848485
@@ -47,32 +47,20 @@ def draw(canvas):
     #print ball_pos
     data = arduino.readline()
     if data:
-<<<<<<< HEAD
-    	shuriken_data = []
-    	shuriken_data = data.split()
-    	print "shur data: ",shuriken_data
-=======
         print data
     	shuriken_data = []
     	shuriken_data = data.split()
     	#print "shur data: ",shuriken_data
->>>>>>> e8362675aaaeaefe0dd0dc8080cdd48c6517a998
     	#print "Shur data0: ",shuriken_data[0]
         #print "shur data twice :", shuriken_data
         if len(shuriken_data) == 2:
             shuriken_data[0] = float(convert_to_pixels(float(shuriken_data[0])))
-<<<<<<< HEAD
-	    print "Ball Pos",ball_pos
-            print shuriken_data
-            print CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS, CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS
-=======
->>>>>>> e8362675aaaeaefe0dd0dc8080cdd48c6517a998
             if int(shuriken_data[1]) == 1:
-        	loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,0,topArea/3)
-            elif int(shuriken_data[1]) == 2:
-        	loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,topArea/3,2*(topArea/3))
-            elif int(shuriken_data[1]) == 3:
-        	loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,2*(topArea/3),topArea)
+                loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,0,topArea/3)
+        	elif int(shuriken_data[1]) == 2:
+                loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,topArea/3,2*(topArea/3))
+        	elif int(shuriken_data[1]) == 3:
+                loop_to_remove(CANVAS_WIDTH-shuriken_data[0]-BALL_RADIUS,CANVAS_WIDTH-shuriken_data[0]+BALL_RADIUS,2*(topArea/3),topArea)
         else:
             print "Error, single value only"
 
@@ -89,3 +77,5 @@ arduino.flush()
 arduino.flushInput()
 arduino.flushOutput()
 arduino.close()
+
+			
